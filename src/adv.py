@@ -48,6 +48,7 @@ while go not in ('q', 'quit', 'exit'):
         print('~   Game Options:\n')
         print('~   To examine the area you are in:           Look')
         print('~   To see a list of items you are holding:   Inventory')
+        print('~   Available directions of travel:           N, S, E, W, North, South, East, West')
         print(
                 '~   To move into a new area:                  Move, Head, Travel, Go, Walk + The direction you want to go.')
         print('~   To pick up something in a room:           Get, Take + The item you want to pick up.')

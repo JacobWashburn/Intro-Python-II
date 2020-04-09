@@ -1,8 +1,10 @@
 import textwrap
 
-from input import *
-from item import *
+from input import travel, pickup, drop
+from initialization import initialization
 from player import Player
+
+initial_room = initialization()
 
 #
 # Main
@@ -12,8 +14,9 @@ from player import Player
 
 
 name = input('What is your name?: ')
-player = Player(name, room['outside'])
-player.name = 'hello'
+while not name:
+    name = input('Seriously? You don\'t have a name? Come on..... Give me your name: ')
+player = Player(name, initial_room)
 
 # Write a loop that:
 #
@@ -70,7 +73,7 @@ while go not in ('q', 'quit', 'exit'):
         for k, v in directions.items():
             if v:
                 print(text(f'To the {k.capitalize()} is the {v.name}.'))
-    x = input('').lower()
+    x = input(': ').lower()
     go = x.split()
     if go and go[0] not in (
     'travel', 'go', 'head', 'walk', 'move', 'take', 'get', 'drop', 'q', 'look', 'inventory', 'help', 'exit', 'quit'):
